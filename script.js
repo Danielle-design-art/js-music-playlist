@@ -171,14 +171,17 @@ const songs = [
 
     
       const songDivElement = document.createElement("div");
-      const songTitleElement = document.createElement("h2");
-      const songArtistElement = document.createElement("h3");
-      
+      const songTitleElement = document.createElement("h3");
+     
+      const songArtistElement = document.createElement("p");
       const songDurationElement = document.createElement("p");
       const songFavoriteElement = document.createElement("p");
 
       const songAudioElement = document.createElement("audio");
       const songSourceElement = document.createElement("source");
+
+      const songImageElement = document.createElement("image");
+      
       
     
       songTitleElement.innerText = song.title;
@@ -188,14 +191,23 @@ const songs = [
       songFavoriteElement.innerText = song.liked ? "⭐" : "";
       
       songAudioElement.controls= true;
+      songImageElement.src = Image;
+     
+      
       songSourceElement.src = song.audio;
+      
     
       songDivElement.appendChild(songTitleElement);
       songDivElement.appendChild(songArtistElement);
       songDivElement.appendChild(songDurationElement);
-      songDivElement.appendChild(songAudioElement);
+      
       songDivElement.appendChild(songSourceElement);
       songDivElement.appendChild(songFavoriteElement);
+      
+
+      songDivElement.appendChild(songAudioElement);
+      songDivElement.appendChild(songImageElement);
+
 
       playlistDivElement.appendChild(songDivElement);
 
